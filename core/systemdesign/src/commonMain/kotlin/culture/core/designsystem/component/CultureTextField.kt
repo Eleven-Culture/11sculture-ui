@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import culture.core.designsystem.theme.CultureTheme
 import culture.core.designsystem.tokens.CultureSpacing
@@ -22,9 +23,18 @@ fun CultureTextField(
     onValueChange: (String) -> Unit,
     label: String,
     modifier: Modifier = Modifier,
+    leadingIcon: (@Composable () -> Unit)? = null,
+    trailingIcon: (@Composable () -> Unit)? = null,
     supportingText: String? = null,
     isError: Boolean = false,
     enabled: Boolean = true,
+    readOnly: Boolean = false,
+    isPassword: Boolean = false,
+    singleLine: Boolean = true,
+    maxLines: Int = 1,
+    maxLength: Int? = null,
+    showCounter: Boolean = false,
+    keyboardType: KeyboardType = KeyboardType.Text,
     visualTransformation: VisualTransformation = VisualTransformation.None,
 ) {
     val colors = CultureTheme.colors
